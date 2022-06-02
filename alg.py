@@ -34,15 +34,27 @@ class Grafo:
   
     ''' Este es el docstring de la función bfs_traversal
       Los parámetros de la funcion  son: self y nodo_inicio
-    
     '''
 
+
+
+    
     def bfs_traversal(self, nodo_inicio):
+
+        '''    
+        >>> bfs_traversal(' g = Grafo(5, dirigido=True)')
+        ' '
+
+        '''
+
+
+
+        
         ''' Conjunto de nodos visitados '''
         visitado = set()
         cola = Queue()
 
-        ''' se agtega el nodo inicio a la cola y la lista visitada'''
+        ''' se agrega el nodo inicio a la cola y la lista visitada'''
         cola.put(nodo_inicio)
         visitado.add(nodo_inicio)
 
@@ -63,6 +75,15 @@ class Grafo:
                     ''' visitar el nodo  y ponerlo en cola'''
                     visitado.add(next_node)
 
+
+
+
+
+
+
+
+
+
 '''metodo main para la ejecucion del programa'''
 if __name__ == "__main__":
 
@@ -70,15 +91,20 @@ if __name__ == "__main__":
 
     
     '''se crea la instancia del
-     objeto tipo grafo especifica como parametro el numero de nostos y el tipo de grafo'''
-    g = Grafo(5, dirigido=False)
+     objeto tipo grafo especifica como parametro el numero de nodos y el tipo de grafo'''
+    g = Grafo(6, dirigido=False)
 
     '''Se agrega el numero de nodos para recorrer'''
     g.add_arista(0, 1)
     g.add_arista(0, 2)
+    g.add_arista(0, 3)
+    g.add_arista(0, 4)
     g.add_arista(1, 2)
-    g.add_arista(1, 4)
     g.add_arista(2, 3)
+    g.add_arista(2, 5)
+    g.add_arista(3, 4)
+    g.add_arista(3, 5)
+    g.add_arista(4 ,5)
 
     '''imprime el recorrido realizado ,se refiere a la lista de adyacencia'''
     g.print_adj_list()
@@ -88,3 +114,5 @@ if __name__ == "__main__":
     g.bfs_traversal(0)
     print()
 
+    #import doctest
+    #doctest.testmod()
