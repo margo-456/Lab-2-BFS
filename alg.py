@@ -40,16 +40,6 @@ class Grafo:
 
     
     def bfs_traversal(self, nodo_inicio):
-
-        '''    
-        >>> bfs_traversal(' g = Grafo(5, dirigido=True)')
-        ' '
-
-        '''
-
-
-
-        
         ''' Conjunto de nodos visitados '''
         visitado = set()
         cola = Queue()
@@ -86,14 +76,9 @@ class Grafo:
 
 '''metodo main para la ejecucion del programa'''
 if __name__ == "__main__":
-
-  #### EXAMPLE #####
-
-    
     '''se crea la instancia del
      objeto tipo grafo especifica como parametro el numero de nodos y el tipo de grafo'''
-    g = Grafo(6, dirigido=False)
-
+    g = Grafo(8, dirigido=False)
     '''Se agrega el numero de nodos para recorrer'''
     g.add_arista(0, 1)
     g.add_arista(0, 2)
@@ -105,6 +90,11 @@ if __name__ == "__main__":
     g.add_arista(3, 4)
     g.add_arista(3, 5)
     g.add_arista(4 ,5)
+    g.add_arista(6 ,5)
+    g.add_arista(6 ,4)
+    g.add_arista(7 ,4)
+    g.add_arista(7 ,5)
+
 
     '''imprime el recorrido realizado ,se refiere a la lista de adyacencia'''
     g.print_adj_list()
